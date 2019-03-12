@@ -6,13 +6,8 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    results: [],
   };
-
-  // When this component mounts, search the Giphy API for pictures of kittens
-  // componentDidMount() {
-  //   this.searchBook("A Separate Peace");
-  // }
 
   searchBook = query => {
     API.searchBook(query)
@@ -34,6 +29,11 @@ class SearchResultContainer extends Component {
     this.searchBook(this.state.search);
   };
 
+  saveBook = book => {
+    console.log(book);
+
+  }
+
   render() {
     return (
       <div>
@@ -43,7 +43,10 @@ class SearchResultContainer extends Component {
           handleInputChange={this.handleInputChange}
         />
         <ResultList 
-        results={this.state.results} />
+        results={this.state.results} 
+        saveBook={this.saveBook}
+        />
+        
       </div>
     );
   }
