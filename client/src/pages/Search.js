@@ -31,6 +31,7 @@ class SearchResultContainer extends Component {
 
   saveBook = book => {
     console.log(book);
+    API.saveBook(book);
 
   }
 
