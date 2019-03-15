@@ -6,6 +6,9 @@ function Nav() {
       <a className="navbar-brand" href="/">
         Googlebooks Search
       </a>
+      <a className="navbar-brand" href="/books">
+        Googlebooks Saved Items
+      </a>
     </nav>
   );
 }

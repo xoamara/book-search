@@ -23,7 +23,7 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the Google API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchBook(this.state.search);
