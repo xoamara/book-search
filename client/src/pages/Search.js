@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
+import { Col, Row, Container } from "../components/Grid";
 
 class SearchResultContainer extends Component {
   state = {
@@ -38,16 +39,22 @@ class SearchResultContainer extends Component {
   render() {
     return (
       <div>
-        <SearchForm
-          search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
+        <Container fluid>
+          <Row>
+            <Col size="lg-12">
+              <SearchForm
+                search={this.state.search}
+                handleFormSubmit={this.handleFormSubmit}
+                handleInputChange={this.handleInputChange}
+              />
+            </Col>
+          </Row>
+        </Container>
+        <ResultList
+          results={this.state.results}
+          saveBook={this.saveBook}
         />
-        <ResultList 
-        results={this.state.results} 
-        saveBook={this.saveBook}
-        />
-        
+
       </div>
     );
   }
