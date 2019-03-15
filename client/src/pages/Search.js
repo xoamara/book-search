@@ -11,7 +11,7 @@ class SearchResultContainer extends Component {
 
   searchBook = query => {
     API.searchBook(query)
-      .then(res => this.setState({ results: res.data.items }))
+      .then(res => this.setState({ search: "", results: res.data.items }))
       .catch(err => console.log(err));
   };
 

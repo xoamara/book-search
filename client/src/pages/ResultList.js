@@ -6,15 +6,14 @@ import List from "../components/List";
 
 function ResultList(props) {
 
-  // const renderAuthor = (props) => {
-  //   const author = props.results.volumeInfo.authors;
-  //   if (author === null) {
-  //     return <p className="author">Author:  None</p>;
-  //   } else {          
-  //     return props.results.volumeInfo.authors.map(author => (
-  //     <p className="author" key={author}>Author: {author}</p>
-  //   ))}
-  //   };
+  const renderAuthor = (authors) => {
+    if (authors == null) {
+      return <p className="author">Author:  None</p>;
+    } else {          
+      return authors.map(author => (
+      <p className="author" key={author}>Author: {author}</p>
+    ))}
+    };
 
 
   return (
@@ -29,12 +28,7 @@ function ResultList(props) {
                     <Card.Img variant="top" src={result.volumeInfo.imageLinks.thumbnail} style={{ width: '10rem' }} alt={result.volumeInfo.title} />
 
                     <Card.Title className="title">Title:  {result.volumeInfo.title}</Card.Title>
-
-                    {result.volumeInfo.authors.map(author => {
-                      return author === null ?
-                        <Card.Subtitle className="mb-1">className="author">Author: None</Card.Subtitle> : <Card.Subtitle className="author" key={author}>Author:  {author} </Card.Subtitle>
-                    })
-                    }
+                    {renderAuthor(result.volumeInfo.authors)}
                     <Card.Text className="description">{result.volumeInfo.description}</Card.Text>
                     <Card.Link className="link" href={result.selfLink}>Link:  {result.volumeInfo.title}</Card.Link>
                     <br/>
