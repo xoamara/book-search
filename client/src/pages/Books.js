@@ -5,9 +5,7 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import Card from "react-bootstrap/Card";
 import List from "../components/List";
-// import CardGroup from "react-bootstrap/CardGroup"
-// import ListGroup from "react-bootstrap/ListGroup"
-// import ListGroupItem from "react-bootstrap/ListGroupItem"
+
 
 class Books extends Component {
   state = {
